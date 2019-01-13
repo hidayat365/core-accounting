@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Accounting.Migrations
 {
     [DbContext(typeof(AccountingDbContext))]
-    [Migration("20190113171310_InitialMigration")]
+    [Migration("20190113180023_InitialMigration")]
     partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -67,7 +67,7 @@ namespace Accounting.Migrations
                         .IsRequired()
                         .HasMaxLength(100);
 
-                    b.Property<int?>("ParentId");
+                    b.Property<int>("ParentId");
 
                     b.HasKey("Id");
 
@@ -145,7 +145,8 @@ namespace Accounting.Migrations
 
                     b.HasOne("Accounting.Models.Account", "Parent")
                         .WithMany()
-                        .HasForeignKey("ParentId");
+                        .HasForeignKey("ParentId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Accounting.Models.AccountCategory", b =>

@@ -65,7 +65,7 @@ namespace Accounting.Migrations
                         .IsRequired()
                         .HasMaxLength(100);
 
-                    b.Property<int?>("ParentId");
+                    b.Property<int>("ParentId");
 
                     b.HasKey("Id");
 
@@ -143,7 +143,8 @@ namespace Accounting.Migrations
 
                     b.HasOne("Accounting.Models.Account", "Parent")
                         .WithMany()
-                        .HasForeignKey("ParentId");
+                        .HasForeignKey("ParentId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Accounting.Models.AccountCategory", b =>

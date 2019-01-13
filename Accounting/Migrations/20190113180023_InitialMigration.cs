@@ -70,7 +70,7 @@ namespace Accounting.Migrations
                     BankAccountNumber = table.Column<string>(maxLength: 100, nullable: true),
                     BankAccountHolder = table.Column<string>(maxLength: 100, nullable: true),
                     CategoryId = table.Column<int>(nullable: false),
-                    ParentId = table.Column<int>(nullable: true)
+                    ParentId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {

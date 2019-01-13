@@ -13,9 +13,9 @@ namespace Accounting.Context
         {
         }
 
-        DbSet<AccountType> AccountTypes { get; set; }
-        DbSet<AccountCategory> AccountCategories { get; set; }
-        DbSet<Account> Accounts { get; set; }
+        public DbSet<AccountType> AccountTypes { get; set; }
+        public DbSet<AccountCategory> AccountCategories { get; set; }
+        public DbSet<Account> Accounts { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
