@@ -37,8 +37,13 @@ namespace Accounting.Models
         public string BankAccountHolder { get; set; }
 
         [Required]
+        [Display(Name = "Account Category")]
+        public int CategoryId { get; set; }
+        [Required]
         public AccountCategory Category { get; set; }
 
+        [Display(Name = "Parent Account")]
+        public int ParentId { get; set; }
         public Account Parent { get; set; }
     }
 }

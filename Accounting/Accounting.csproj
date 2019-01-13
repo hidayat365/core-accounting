@@ -8,6 +8,8 @@
   <ItemGroup>
     <Compile Remove="Migrations\20190113171046_InitialMigration.cs" />
     <Compile Remove="Migrations\20190113171046_InitialMigration.Designer.cs" />
+    <Compile Remove="Migrations\20190113171310_InitialMigration.cs" />
+    <Compile Remove="Migrations\20190113171310_InitialMigration.Designer.cs" />
   </ItemGroup>
 
 
@@ -19,6 +21,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.0" />
   </ItemGroup>
 
 </Project>
