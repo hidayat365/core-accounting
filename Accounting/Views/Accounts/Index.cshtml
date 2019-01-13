@@ -25,34 +25,16 @@
                 @Html.DisplayNameFor(model => model.Checking)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.BankName)
+                @Html.DisplayNameFor(model => model.Category.Code)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.BankAddress)
+                @Html.DisplayNameFor(model => model.Category.Name)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.BankAccountNumber)
+                @Html.DisplayNameFor(model => model.Parent.Code)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.BankAccountHolder)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Category)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Parent)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CreatedBy)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CreatedOn)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ModifiedBy)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ModifiedOn)
+                @Html.DisplayNameFor(model => model.Parent.Name)
             </th>
             <th></th>
         </tr>
@@ -73,34 +55,16 @@
                 @Html.DisplayFor(modelItem => item.Checking)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.BankName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BankAddress)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BankAccountNumber)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BankAccountHolder)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.Category.Code)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category.Name)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Parent.Code)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.CreatedBy)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CreatedOn)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ModifiedBy)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ModifiedOn)
+                @Html.DisplayFor(modelItem => item.Parent.Name)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |

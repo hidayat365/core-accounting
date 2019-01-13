@@ -12,10 +12,12 @@ namespace Accounting.Models
 
         [Required]
         [MaxLength(50)]
+        [Display(Name = "Type Code")]
         public string Code { get; set; }
 
         [Required]
         [MaxLength(100)]
+        [Display(Name = "Type Name")]
         public string Name { get; set; }
     }
 }
