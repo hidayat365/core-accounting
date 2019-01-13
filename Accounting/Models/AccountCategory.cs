@@ -23,7 +23,6 @@ namespace Accounting.Models
         [Required]
         [Display(Name = "Account Type")]
         public int TypeId { get; set; }
-        [Required]
         public AccountType Type { get; set; }
     }
 }

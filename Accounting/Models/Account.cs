@@ -21,10 +21,10 @@ namespace Accounting.Models
         public string Name { get; set; }
 
         [Required]
-        public bool? Active { get; set; }
+        public Boolean Active { get; set; }
 
         [Required]
-        public bool? Checking { get; set; }
+        public Boolean Checking { get; set; }
 
         [MaxLength(100)]
         public string BankName { get; set; }
@@ -41,11 +41,10 @@ namespace Accounting.Models
         [Required]
         [Display(Name = "Account Category")]
         public int CategoryId { get; set; }
-        [Required]
         public AccountCategory Category { get; set; }
 
         [Display(Name = "Parent Account")]
-        public int ParentId { get; set; }
+        public int? ParentId { get; set; }
         public Account Parent { get; set; }
     }
 }

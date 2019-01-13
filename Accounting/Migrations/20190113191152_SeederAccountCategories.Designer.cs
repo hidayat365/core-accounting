@@ -4,14 +4,16 @@ using Accounting.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Accounting.Migrations
 {
     [DbContext(typeof(AccountingDbContext))]
-    partial class AccountingDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190113191152_SeederAccountCategories")]
+    partial class SeederAccountCategories
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -25,7 +27,8 @@ namespace Accounting.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<bool>("Active")
+                    b.Property<bool?>("Active")
+                        .IsRequired()
                         .ValueGeneratedOnAdd()
                         .HasDefaultValue(true);
 
@@ -43,7 +46,8 @@ namespace Accounting.Migrations
 
                     b.Property<int>("CategoryId");
 
-                    b.Property<bool>("Checking")
+                    b.Property<bool?>("Checking")
+                        .IsRequired()
                         .ValueGeneratedOnAdd()
                         .HasDefaultValue(false);
 
@@ -51,15 +55,15 @@ namespace Accounting.Migrations
                         .IsRequired()
                         .HasMaxLength(50);
 
-                    b.Property<int?>("CreatedBy");
+                    b.Property<int>("CreatedBy");
 
-                    b.Property<DateTime?>("CreatedOn")
+                    b.Property<DateTime>("CreatedOn")
                         .ValueGeneratedOnAdd()
                         .HasDefaultValueSql("getdate()");
 
-                    b.Property<int?>("ModifiedBy");
+                    b.Property<int>("ModifiedBy");
 
-                    b.Property<DateTime?>("ModifiedOn")
+                    b.Property<DateTime>("ModifiedOn")
                         .ValueGeneratedOnAdd()
                         .HasDefaultValueSql("getdate()");
 
@@ -67,7 +71,7 @@ namespace Accounting.Migrations
                         .IsRequired()
                         .HasMaxLength(100);
 
-                    b.Property<int?>("ParentId");
+                    b.Property<int>("ParentId");
 
                     b.HasKey("Id");
 
@@ -91,15 +95,15 @@ namespace Accounting.Migrations
                         .IsRequired()
                         .HasMaxLength(50);
 
-                    b.Property<int?>("CreatedBy");
+                    b.Property<int>("CreatedBy");
 
-                    b.Property<DateTime?>("CreatedOn")
+                    b.Property<DateTime>("CreatedOn")
                         .ValueGeneratedOnAdd()
                         .HasDefaultValueSql("getdate()");
 
-                    b.Property<int?>("ModifiedBy");
+                    b.Property<int>("ModifiedBy");
 
-                    b.Property<DateTime?>("ModifiedOn")
+                    b.Property<DateTime>("ModifiedOn")
                         .ValueGeneratedOnAdd()
                         .HasDefaultValueSql("getdate()");
 
@@ -123,6 +127,10 @@ namespace Accounting.Migrations
                         {
                             Id = 11,
                             Code = "1100",
+                            CreatedBy = 0,
+                            CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ModifiedBy = 0,
+                            ModifiedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Current Assets",
                             TypeId = 1
                         },
@@ -130,6 +138,10 @@ namespace Accounting.Migrations
                         {
                             Id = 12,
                             Code = "1200",
+                            CreatedBy = 0,
+                            CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ModifiedBy = 0,
+                            ModifiedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Receivables",
                             TypeId = 1
                         },
@@ -137,6 +149,10 @@ namespace Accounting.Migrations
                         {
                             Id = 13,
                             Code = "1300",
+                            CreatedBy = 0,
+                            CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ModifiedBy = 0,
+                            ModifiedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Inventories",
                             TypeId = 1
                         },
@@ -144,6 +160,10 @@ namespace Accounting.Migrations
                         {
                             Id = 14,
                             Code = "1400",
+                            CreatedBy = 0,
+                            CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ModifiedBy = 0,
+                            ModifiedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Prepaid Expenses",
                             TypeId = 1
                         },
@@ -151,6 +171,10 @@ namespace Accounting.Migrations
                         {
                             Id = 15,
                             Code = "1500",
+                            CreatedBy = 0,
+                            CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ModifiedBy = 0,
+                            ModifiedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Fixed Assets",
                             TypeId = 1
                         },
@@ -158,6 +182,10 @@ namespace Accounting.Migrations
                         {
                             Id = 16,
                             Code = "1600",
+                            CreatedBy = 0,
+                            CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ModifiedBy = 0,
+                            ModifiedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Depreciations & Amortizations",
                             TypeId = 1
                         },
@@ -165,6 +193,10 @@ namespace Accounting.Migrations
                         {
                             Id = 17,
                             Code = "1700",
+                            CreatedBy = 0,
+                            CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ModifiedBy = 0,
+                            ModifiedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Non-Current Receivables",
                             TypeId = 1
                         },
@@ -172,6 +204,10 @@ namespace Accounting.Migrations
                         {
                             Id = 18,
                             Code = "1800",
+                            CreatedBy = 0,
+                            CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ModifiedBy = 0,
+                            ModifiedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Intercompany Receivables",
                             TypeId = 1
                         },
@@ -179,6 +215,10 @@ namespace Accounting.Migrations
                         {
                             Id = 19,
                             Code = "1900",
+                            CreatedBy = 0,
+                            CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ModifiedBy = 0,
+                            ModifiedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Other Assets",
                             TypeId = 1
                         },
@@ -186,6 +226,10 @@ namespace Accounting.Migrations
                         {
                             Id = 20,
                             Code = "2100",
+                            CreatedBy = 0,
+                            CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ModifiedBy = 0,
+                            ModifiedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Payables",
                             TypeId = 2
                         },
@@ -193,6 +237,10 @@ namespace Accounting.Migrations
                         {
                             Id = 21,
                             Code = "2200",
+                            CreatedBy = 0,
+                            CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ModifiedBy = 0,
+                            ModifiedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Expenses",
                             TypeId = 2
                         },
@@ -200,6 +248,10 @@ namespace Accounting.Migrations
                         {
                             Id = 22,
                             Code = "2300",
+                            CreatedBy = 0,
+                            CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ModifiedBy = 0,
+                            ModifiedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Accrued Expenses",
                             TypeId = 2
                         },
@@ -207,6 +259,10 @@ namespace Accounting.Migrations
                         {
                             Id = 23,
                             Code = "2400",
+                            CreatedBy = 0,
+                            CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ModifiedBy = 0,
+                            ModifiedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Other Expenses",
                             TypeId = 2
                         },
@@ -214,6 +270,10 @@ namespace Accounting.Migrations
                         {
                             Id = 24,
                             Code = "2500",
+                            CreatedBy = 0,
+                            CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ModifiedBy = 0,
+                            ModifiedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Accrued Taxes",
                             TypeId = 2
                         },
@@ -221,6 +281,10 @@ namespace Accounting.Migrations
                         {
                             Id = 25,
                             Code = "2600",
+                            CreatedBy = 0,
+                            CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ModifiedBy = 0,
+                            ModifiedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Deferred Taxes",
                             TypeId = 2
                         },
@@ -228,6 +292,10 @@ namespace Accounting.Migrations
                         {
                             Id = 26,
                             Code = "2700",
+                            CreatedBy = 0,
+                            CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ModifiedBy = 0,
+                            ModifiedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Long-Term Debt",
                             TypeId = 2
                         },
@@ -235,6 +303,10 @@ namespace Accounting.Migrations
                         {
                             Id = 27,
                             Code = "2800",
+                            CreatedBy = 0,
+                            CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ModifiedBy = 0,
+                            ModifiedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Intercompany Payables",
                             TypeId = 2
                         },
@@ -242,6 +314,10 @@ namespace Accounting.Migrations
                         {
                             Id = 28,
                             Code = "2900",
+                            CreatedBy = 0,
+                            CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ModifiedBy = 0,
+                            ModifiedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Other Liabilities",
                             TypeId = 2
                         },
@@ -249,6 +325,10 @@ namespace Accounting.Migrations
                         {
                             Id = 29,
                             Code = "3100",
+                            CreatedBy = 0,
+                            CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ModifiedBy = 0,
+                            ModifiedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Common Stock",
                             TypeId = 3
                         },
@@ -256,6 +336,10 @@ namespace Accounting.Migrations
                         {
                             Id = 30,
                             Code = "3200",
+                            CreatedBy = 0,
+                            CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ModifiedBy = 0,
+                            ModifiedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Preferred Stock",
                             TypeId = 3
                         },
@@ -263,6 +347,10 @@ namespace Accounting.Migrations
                         {
                             Id = 31,
                             Code = "3300",
+                            CreatedBy = 0,
+                            CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ModifiedBy = 0,
+                            ModifiedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Paid in Capital",
                             TypeId = 3
                         },
@@ -270,6 +358,10 @@ namespace Accounting.Migrations
                         {
                             Id = 32,
                             Code = "3400",
+                            CreatedBy = 0,
+                            CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ModifiedBy = 0,
+                            ModifiedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Partner Capital",
                             TypeId = 3
                         },
@@ -277,6 +369,10 @@ namespace Accounting.Migrations
                         {
                             Id = 33,
                             Code = "3500",
+                            CreatedBy = 0,
+                            CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ModifiedBy = 0,
+                            ModifiedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Member Contribution",
                             TypeId = 3
                         },
@@ -284,6 +380,10 @@ namespace Accounting.Migrations
                         {
                             Id = 34,
                             Code = "3600",
+                            CreatedBy = 0,
+                            CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ModifiedBy = 0,
+                            ModifiedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Drawings",
                             TypeId = 3
                         },
@@ -291,6 +391,10 @@ namespace Accounting.Migrations
                         {
                             Id = 35,
                             Code = "3800",
+                            CreatedBy = 0,
+                            CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ModifiedBy = 0,
+                            ModifiedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Current Earnings",
                             TypeId = 3
                         },
@@ -298,6 +402,10 @@ namespace Accounting.Migrations
                         {
                             Id = 36,
                             Code = "3900",
+                            CreatedBy = 0,
+                            CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ModifiedBy = 0,
+                            ModifiedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Retained Earnings",
                             TypeId = 3
                         });
@@ -313,15 +421,15 @@ namespace Accounting.Migrations
                         .IsRequired()
                         .HasMaxLength(50);
 
-                    b.Property<int?>("CreatedBy");
+                    b.Property<int>("CreatedBy");
 
-                    b.Property<DateTime?>("CreatedOn")
+                    b.Property<DateTime>("CreatedOn")
                         .ValueGeneratedOnAdd()
                         .HasDefaultValueSql("getdate()");
 
-                    b.Property<int?>("ModifiedBy");
+                    b.Property<int>("ModifiedBy");
 
-                    b.Property<DateTime?>("ModifiedOn")
+                    b.Property<DateTime>("ModifiedOn")
                         .ValueGeneratedOnAdd()
                         .HasDefaultValueSql("getdate()");
 
@@ -341,24 +449,40 @@ namespace Accounting.Migrations
                         {
                             Id = 1,
                             Code = "1000",
+                            CreatedBy = 0,
+                            CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ModifiedBy = 0,
+                            ModifiedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Assets"
                         },
                         new
                         {
                             Id = 2,
                             Code = "2000",
+                            CreatedBy = 0,
+                            CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ModifiedBy = 0,
+                            ModifiedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Liabilities"
                         },
                         new
                         {
                             Id = 3,
                             Code = "3000",
+                            CreatedBy = 0,
+                            CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ModifiedBy = 0,
+                            ModifiedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Equities"
                         },
                         new
                         {
                             Id = 4,
                             Code = "4000",
+                            CreatedBy = 0,
+                            CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ModifiedBy = 0,
+                            ModifiedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Income Statements"
                         });
                 });
@@ -372,7 +496,8 @@ namespace Accounting.Migrations
 
                     b.HasOne("Accounting.Models.Account", "Parent")
                         .WithMany()
-                        .HasForeignKey("ParentId");
+                        .HasForeignKey("ParentId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Accounting.Models.AccountCategory", b =>

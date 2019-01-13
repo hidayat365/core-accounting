@@ -4,14 +4,16 @@ using Accounting.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Accounting.Migrations
 {
     [DbContext(typeof(AccountingDbContext))]
-    partial class AccountingDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190113191723_EntryLogAllowNulls")]
+    partial class EntryLogAllowNulls
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -25,7 +27,8 @@ namespace Accounting.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<bool>("Active")
+                    b.Property<bool?>("Active")
+                        .IsRequired()
                         .ValueGeneratedOnAdd()
                         .HasDefaultValue(true);
 
@@ -43,7 +46,8 @@ namespace Accounting.Migrations
 
                     b.Property<int>("CategoryId");
 
-                    b.Property<bool>("Checking")
+                    b.Property<bool?>("Checking")
+                        .IsRequired()
                         .ValueGeneratedOnAdd()
                         .HasDefaultValue(false);
 
@@ -67,7 +71,7 @@ namespace Accounting.Migrations
                         .IsRequired()
                         .HasMaxLength(100);
 
-                    b.Property<int?>("ParentId");
+                    b.Property<int>("ParentId");
 
                     b.HasKey("Id");
 
@@ -372,7 +376,8 @@ namespace Accounting.Migrations
 
                     b.HasOne("Accounting.Models.Account", "Parent")
                         .WithMany()
-                        .HasForeignKey("ParentId");
+                        .HasForeignKey("ParentId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Accounting.Models.AccountCategory", b =>
