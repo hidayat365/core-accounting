@@ -28,15 +28,19 @@ namespace Accounting.Data.Models.Shared
         public Boolean Checking { get; set; }
 
         [MaxLength(100)]
+        [Display(Name = "Bank Name")]
         public string BankName { get; set; }
 
         [MaxLength(200)]
+        [Display(Name = "Bank Address")]
         public string BankAddress { get; set; }
 
         [MaxLength(100)]
+        [Display(Name = "Bank Account Number")]
         public string BankAccountNumber { get; set; }
 
         [MaxLength(100)]
+        [Display(Name = "Bank Account Holder")]
         public string BankAccountHolder { get; set; }
 
         [Required]
