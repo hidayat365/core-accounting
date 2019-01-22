@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Accounting.Models
+namespace Accounting.Data.Models.Logger
 {
     public class EntryLog
     {

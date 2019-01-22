@@ -5,8 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using Accounting.Context;
-using Accounting.Models;
+using Accounting.Data.Context;
+using Accounting.Data.Models;
+using Accounting.Data.Models.Shared;
 
 namespace Accounting.Controllers
 {

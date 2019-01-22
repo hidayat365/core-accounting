@@ -1,6 +1,6 @@
 using System;
 
-namespace Accounting.Models
+namespace Accounting.Data.Models
 {
     public class ErrorViewModel
     {

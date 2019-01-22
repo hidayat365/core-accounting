@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Accounting.Migrations
+namespace Accounting.Data.Migrations
 {
     public partial class EntryLogAllowNulls : Migration
     {

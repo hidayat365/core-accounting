@@ -1,11 +1,12 @@
-﻿using Accounting.Models;
+﻿using Accounting.Data.Models;
+using Accounting.Data.Models.Shared;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Accounting.Context
+namespace Accounting.Data.Context
 {
     public class AccountingDbContext : DbContext
     {
