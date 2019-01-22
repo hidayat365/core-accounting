@@ -17,6 +17,7 @@ namespace Accounting.Data.Context
         public DbSet<AccountType> AccountTypes { get; set; }
         public DbSet<AccountCategory> AccountCategories { get; set; }
         public DbSet<Account> Accounts { get; set; }
+        public DbSet<Currency> Currencies { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -63,6 +64,7 @@ namespace Accounting.Data.Context
                 new AccountType() { Id = 2, Code = "2000", Name = "Liabilities" },
                 new AccountType() { Id = 3, Code = "3000", Name = "Equities" },
                 new AccountType() { Id = 4, Code = "4000", Name = "Income Statements" });
+
             modelBuilder.Entity<AccountCategory>().HasData(
                 new AccountCategory() { Id = 11, Code = "1100", TypeId = 1, Name = "Current Assets" },
                 new AccountCategory() { Id = 12, Code = "1200", TypeId = 1, Name = "Receivables" },
@@ -90,6 +92,10 @@ namespace Accounting.Data.Context
                 new AccountCategory() { Id = 34, Code = "3600", TypeId = 3, Name = "Drawings" },
                 new AccountCategory() { Id = 35, Code = "3800", TypeId = 3, Name = "Current Earnings" },
                 new AccountCategory() { Id = 36, Code = "3900", TypeId = 3, Name = "Retained Earnings" });
+
+            modelBuilder.Entity<Currency>().HasData(
+                new Currency() { Id = 1, Code = "IDR", Name = "Indonesia Rupiah" },
+                new Currency() { Id = 2, Code = "USD", Name = "United States Dollar" });
         }
     }
 }

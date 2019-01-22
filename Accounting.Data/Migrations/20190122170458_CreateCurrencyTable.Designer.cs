@@ -4,14 +4,16 @@ using Accounting.Data.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Accounting.Data.Migrations
 {
     [DbContext(typeof(AccountingDbContext))]
-    partial class AccountingDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190122170458_CreateCurrencyTable")]
+    partial class CreateCurrencyTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -388,20 +390,6 @@ namespace Accounting.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Currencies");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Code = "IDR",
-                            Name = "Indonesia Rupiah"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Code = "USD",
-                            Name = "United States Dollar"
-                        });
                 });
 
             modelBuilder.Entity("Accounting.Data.Models.Shared.Account", b =>
