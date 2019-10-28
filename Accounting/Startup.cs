@@ -33,7 +33,7 @@ namespace Accounting
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
             services.AddDbContext<AccountingDbContext>(item => item.UseSqlServer(Configuration.GetConnectionString("local")));
         }
 
